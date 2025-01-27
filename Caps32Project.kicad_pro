@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.75,
-          "height": 1.75,
-          "width": 1.2
+          "drill": 1.27,
+          "height": 1.905,
+          "width": 1.905
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -444,7 +444,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Caps.kicad_pro",
+    "filename": "Caps32Project.kicad_pro",
     "version": 1
   },
   "net_settings": {

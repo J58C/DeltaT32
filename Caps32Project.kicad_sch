@@ -9119,7 +9119,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Custom:ESP32C3_Supermini_THT"
+		(property "Footprint" "Custom:Supermini_Custom"
 			(at 144.78 39.37 0)
 			(effects
 				(font
