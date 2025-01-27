@@ -15,6 +15,13 @@ jobs:
           pcb_file: Caps32Project.kicad_pcb
           output_path: ${{ github.workspace }}/images
           
+      - name: render pcb gif
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images
+          animation: gif
+          
       - name: Setup Pages
         if: github.ref == 'refs/heads/mh-cd42'
         uses: actions/configure-pages@v3
