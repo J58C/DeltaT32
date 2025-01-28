@@ -1,0 +1,37 @@
+name: images
+on:
+  push:
+    branches:
+      - '340'
+      
+jobs:
+  render-images:
+    name: PCB Render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out the Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Render PCB Images
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images/340
+          
+      - name: Render PCB GIF
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images/340
+          animation: gif
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add images
+          git commit -m "Update PCB render images"
+          git push origin 340
+        continue-on-error: true
