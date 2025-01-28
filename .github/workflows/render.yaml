@@ -1,42 +1,25 @@
-name: Render PCB
-
+name: pcb_image
 on:
   push:
-    branches:
-      - main
-
 jobs:
-  render-images:
-    name: Render PCB
+  render-image:
+    name: render-image
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        branch: [42, 17048]
-        pcb_file: [Caps32Project.kicad_pcb]
-
     steps:
-      - name: Check Repo (Main Branch)
+      - name: Check out the repo
         uses: actions/checkout@v4
-        with:
-          ref: main
 
-      - name: Check Out Specific Branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ matrix.branch }}
-          path: temp/${{ matrix.branch }}
-
-      - name: PCB Images
+      - name: render pcb image
         uses: linalinn/kicad-render@main
         with:
-          pcb_file: temp/${{ matrix.branch }}/${{ matrix.pcb_file }}
-          output_path: ${{ github.workspace }}/images/${{ matrix.branch }}
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images
 
-      - name: PCB Gif
+      - name: render pcb image
         uses: linalinn/kicad-render@main
         with:
-          pcb_file: temp/${{ matrix.branch }}/${{ matrix.pcb_file }}
-          output_path: ${{ github.workspace }}/images/${{ matrix.branch }}
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images
           animation: gif
 
       - name: Setup Pages
@@ -50,21 +33,19 @@ jobs:
           path: "images"
 
   deploy-pages:
-    name: Deploy to GitHub Pages
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    needs: render-images
-
+    needs: render-image
+      
     permissions:
       pages: write
       id-token: write
 
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          artifact_name: "github-pages"
