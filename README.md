@@ -1,7 +1,6 @@
 # Testing
 
 Berikut adalah hasil render PCB dari masing-masing branch:
-
 ---
 ### Render Hasil dari Branch `42`
 - **Animation**  
