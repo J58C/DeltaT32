@@ -29,11 +29,10 @@ jobs:
           curl -L -o images/rotating_17048.gif https://github.com/J58C/Caps32Project/raw/17048/images/rotating.gif
           curl -L -o images/rotating_340.gif https://github.com/J58C/Caps32Project/raw/340/images/rotating.gif
 
-      - name: Upload artifact
-        if: github.ref == 'refs/heads/main'
+      - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "images"
+          path: images/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
