@@ -1,0 +1,48 @@
+name: Sync Branches to Main
+on:
+  push:
+    branches:
+      - '42'
+      - '17048'
+      - '340'
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Sync 42
+        run: |
+          git checkout main
+          git pull origin main
+          git checkout 42 -- .
+          mkdir -p 42
+          mv * 42/
+          git add .
+          git commit -m "Sync changes"
+        
+      - name: Sync 17048
+        run: |
+          git checkout main
+          git pull origin main
+          git checkout 17048 -- .
+          mkdir -p 17048
+          mv * 17048/
+          git add .
+          git commit -m "Sync changes"
+        
+      - name: Sync 340
+        run: |
+          git checkout main
+          git pull origin main
+          git checkout 340 -- .
+          mkdir -p 340
+          mv * 340/
+          git add .
+          git commit -m "Sync changes"
+        
+      - name: Push changes to main
+        run: |
+          git push origin main
