@@ -1,12 +1,6 @@
 name: images
 on:
   push:
-    branches:
-      - '42'
-      - '17048'
-      - '340'
-    paths:
-      - 'Caps32Project.kicad_pcb'
 
 jobs:
   render-images:
