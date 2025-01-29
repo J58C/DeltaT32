@@ -1,4 +1,4 @@
-name: PCB42
+name: images
 on:
   push:
     branches:
