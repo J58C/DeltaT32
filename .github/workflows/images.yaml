@@ -3,7 +3,8 @@ on:
   push:
     branches:
       - '340'
-      
+    paths:
+      - 'Caps32Project.kicad_pcb'
 jobs:
   render-images:
     name: PCB Render
@@ -34,4 +35,3 @@ jobs:
           git add images
           git commit -m "Update PCB render images"
           git push origin 340
-        continue-on-error: true
