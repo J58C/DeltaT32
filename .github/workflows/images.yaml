@@ -30,6 +30,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          
+          # Stash any untracked files before switching branches
+          git stash push --include-untracked
+          
           git checkout main
           git pull origin main --rebase  # Ensure the latest main branch is pulled and rebased
           git add images/
