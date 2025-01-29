@@ -1,8 +1,6 @@
 name: images
 on:
   push:
-    branches:
-      - index
 jobs:
   render-images:
     name: Render PCB
