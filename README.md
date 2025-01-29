@@ -4,7 +4,7 @@ Berikut adalah hasil render PCB dari masing-masing branch:
 ---
 ### Render Hasil dari Branch `42`
 - **Animation**  
-  ![Animation (42)](https://J58C.github.io/Caps32Project/42/rotating.gif)
+  ![Animation (42)](https://github.com/J58C/Caps32Project/blob/42/images/rotating.gif)
   
 - **Top View**  
   ![Top View (42)](https://J58C.github.io/Caps32Project/42/top.png)
