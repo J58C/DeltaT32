@@ -8,6 +8,7 @@
 
 ### Branch `17048`
 ![Animation (17048)](https://github.com/J58C/Caps32Project/blob/17048/images/rotating.gif)
+![Animation (17048)](images/rotating_340.gif)
 ---
 
 ### Branch `340`
