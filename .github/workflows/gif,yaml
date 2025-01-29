@@ -7,7 +7,7 @@ on:
       - 340
     paths:
       - 'images/**'
-   workflow_dispatch:
+  workflow_dispatch:
 jobs:
   deploy-pages:
     runs-on: ubuntu-latest
