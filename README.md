@@ -10,5 +10,5 @@
 ---
 
 ### Render Hasil dari Branch `340`
-![Animation (340)]https://github.com/J58C/Caps32Project/blob/340/images/rotating.gif)
+![Animation (340)](https://github.com/J58C/Caps32Project/blob/340/images/rotating.gif)
 ---
