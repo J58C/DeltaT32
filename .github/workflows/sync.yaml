@@ -52,4 +52,13 @@ jobs:
 
           git add .
           git diff --staged --quiet || git commit -m "Sync from ${{ matrix.branch }} to main/${{ matrix.branch }}"
+
+      - name: Pull latest changes from remote main before pushing
+        run: |
+          cd main_branch
+          git pull --rebase origin main
+
+      - name: Push changes to main
+        run: |
+          cd main_branch
           git push origin main
