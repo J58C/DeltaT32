@@ -30,7 +30,7 @@ jobs:
           curl -L -o images/rotating_340.gif https://github.com/J58C/Caps32Project/raw/340/images/rotating.gif
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: images/
 
