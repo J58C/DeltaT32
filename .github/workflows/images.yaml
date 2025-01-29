@@ -11,7 +11,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Mengambil seluruh riwayat repo untuk checkout branch
+          fetch-depth: 0
 
       - name: render pcb images
         uses: linalinn/kicad-render@main
@@ -26,15 +26,13 @@ jobs:
           output_path: ${{ github.workspace }}/images
           animation: gif
 
-      - name: Commit and Push to main
+      - name: Commit and Push to 42
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git checkout main
-          git pull origin main  # Pastikan branch main terbaru sebelum commit
           git add images/
           git diff --staged --quiet || git commit -m 'Add rendered PCB images and GIFs'
-          git push origin main
+          git push origin 42
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/42'
