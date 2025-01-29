@@ -6,40 +6,47 @@ on:
       - '17048'
       - '340'
   workflow_dispatch:
+
 jobs:
   sync:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: [42, 17048, 340]
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout source branch (${{ matrix.branch }})
         uses: actions/checkout@v3
         with:
+          ref: ${{ matrix.branch }}
           fetch-depth: 0
 
-      - name: Get current branch name
-        run: echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+      - name: Checkout main branch separately
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          path: main_branch
+          fetch-depth: 0
 
-      - name: Copy to main/${{ env.BRANCH_NAME }}
+      - name: Copy files from ${{ matrix.branch }} to main/${{ matrix.branch }}
         run: |
-          git checkout main
-          git pull origin main
-          mkdir -p ${{ env.BRANCH_NAME }}
+          mkdir -p main_branch/${{ matrix.branch }}
 
-          git checkout ${{ env.BRANCH_NAME }} -- \
+          git checkout ${{ matrix.branch }} -- \
             Caps32Project.kicad_pcb \
             Caps32Project.kicad_plr \
             Caps32Project.kicad_pro \
             Caps32Project.kicad_sch \
-            fp-info-cache
+            fp-info-cache || echo "Warning: Some files might not exist in branch ${{ matrix.branch }}"
 
-          cp -r Caps32Project.kicad_pcb Caps32Project.kicad_plr \
-                Caps32Project.kicad_pro Caps32Project.kicad_sch \
-                fp-info-cache \
-                ${{ env.BRANCH_NAME }}/
+          mv Caps32Project.kicad_pcb Caps32Project.kicad_plr \
+             Caps32Project.kicad_pro Caps32Project.kicad_sch \
+             fp-info-cache \
+             main_branch/${{ matrix.branch }}/ || echo "Warning: Some files might not exist, skipping move."
 
-          git add .
-          git diff --staged --quiet || git commit -m "Sync from ${{ env.BRANCH_NAME }} to main/${{ env.BRANCH_NAME }}"
-        
-      - name: Push changes to main
+      - name: Commit changes to main
         run: |
+          cd main_branch
+          git add .
+          git diff --staged --quiet || git commit -m "Sync from ${{ matrix.branch }} to main/${{ matrix.branch }}"
           git push origin main
