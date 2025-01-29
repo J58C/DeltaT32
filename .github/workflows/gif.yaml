@@ -12,6 +12,12 @@ on:
 jobs:
   deploy-pages:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,6 +28,11 @@ jobs:
           curl -L -o images/rotating_42.gif https://github.com/J58C/Caps32Project/raw/42/images/rotating.gif
           curl -L -o images/rotating_17048.gif https://github.com/J58C/Caps32Project/raw/17048/images/rotating.gif
           curl -L -o images/rotating_340.gif https://github.com/J58C/Caps32Project/raw/340/images/rotating.gif
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: images/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
