@@ -26,14 +26,26 @@ jobs:
           output_path: ${{ github.workspace }}/images/42
           animation: gif
 
-      - name: Commit and Push to main
+      - name: Commit and Push images to main
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+
+          # Ambil perubahan terbaru dari main
+          git fetch origin main
+
+          # Checkout main tanpa mengubah file lokal
           git checkout main
-          git pull origin main  # Pastikan branch main terbaru sebelum commit
+          git pull origin main
+
+          # Salin folder images dari branch 42 ke main
+          git checkout 42 -- images/
+
+          # Commit hanya folder images jika ada perubahan
           git add images/
-          git diff --staged --quiet || git commit -m 'Add rendered PCB images and GIFs'
+          git diff --staged --quiet || git commit -m 'Update rendered PCB images'
+
+          # Push perubahan ke main
           git push origin main
 
       - name: Setup Pages
