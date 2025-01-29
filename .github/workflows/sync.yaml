@@ -8,17 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  sync:
+  sync_42:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        branch: [42, 17048, 340]
-
     steps:
-      - name: Checkout source branch (${{ matrix.branch }})
+      - name: Checkout source branch (42)
         uses: actions/checkout@v3
         with:
-          ref: ${{ matrix.branch }}
+          ref: 42
           fetch-depth: 0
 
       - name: Checkout main branch separately
@@ -28,21 +24,21 @@ jobs:
           path: main_branch
           fetch-depth: 0
 
-      - name: Copy files from ${{ matrix.branch }} to main/${{ matrix.branch }}
+      - name: Copy files from 42 to main/42
         run: |
-          mkdir -p main_branch/${{ matrix.branch }}
+          mkdir -p main_branch/42
 
-          git checkout ${{ matrix.branch }} -- \
+          git checkout 42 -- \
             Caps32Project.kicad_pcb \
             Caps32Project.kicad_plr \
             Caps32Project.kicad_pro \
             Caps32Project.kicad_sch \
-            fp-info-cache || echo "Warning: Some files might not exist in branch ${{ matrix.branch }}"
+            fp-info-cache || echo "Warning: Some files might not exist in branch 42"
 
           mv Caps32Project.kicad_pcb Caps32Project.kicad_plr \
              Caps32Project.kicad_pro Caps32Project.kicad_sch \
              fp-info-cache \
-             main_branch/${{ matrix.branch }}/ || echo "Warning: Some files might not exist, skipping move."
+             main_branch/42/ || echo "Warning: Some files might not exist, skipping move."
 
       - name: Commit changes to main
         run: |
@@ -51,7 +47,111 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
           git add .
-          git diff --staged --quiet || git commit -m "Sync from ${{ matrix.branch }} to main/${{ matrix.branch }}"
+          git diff --staged --quiet || git commit -m "Sync from 42 to main/42"
+
+      - name: Pull latest changes from remote main before pushing
+        run: |
+          cd main_branch
+          git pull --rebase origin main
+
+      - name: Push changes to main
+        run: |
+          cd main_branch
+          git push origin main
+
+  sync_17048:
+    runs-on: ubuntu-latest
+    needs: sync_42
+    steps:
+      - name: Checkout source branch (17048)
+        uses: actions/checkout@v3
+        with:
+          ref: 17048
+          fetch-depth: 0
+
+      - name: Checkout main branch separately
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          path: main_branch
+          fetch-depth: 0
+
+      - name: Copy files from 17048 to main/17048
+        run: |
+          mkdir -p main_branch/17048
+
+          git checkout 17048 -- \
+            Caps32Project.kicad_pcb \
+            Caps32Project.kicad_plr \
+            Caps32Project.kicad_pro \
+            Caps32Project.kicad_sch \
+            fp-info-cache || echo "Warning: Some files might not exist in branch 17048"
+
+          mv Caps32Project.kicad_pcb Caps32Project.kicad_plr \
+             Caps32Project.kicad_pro Caps32Project.kicad_sch \
+             fp-info-cache \
+             main_branch/17048/ || echo "Warning: Some files might not exist, skipping move."
+
+      - name: Commit changes to main
+        run: |
+          cd main_branch
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add .
+          git diff --staged --quiet || git commit -m "Sync from 17048 to main/17048"
+
+      - name: Pull latest changes from remote main before pushing
+        run: |
+          cd main_branch
+          git pull --rebase origin main
+
+      - name: Push changes to main
+        run: |
+          cd main_branch
+          git push origin main
+
+  sync_340:
+    runs-on: ubuntu-latest
+    needs: sync_17048
+    steps:
+      - name: Checkout source branch (340)
+        uses: actions/checkout@v3
+        with:
+          ref: 340
+          fetch-depth: 0
+
+      - name: Checkout main branch separately
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          path: main_branch
+          fetch-depth: 0
+
+      - name: Copy files from 340 to main/340
+        run: |
+          mkdir -p main_branch/340
+
+          git checkout 340 -- \
+            Caps32Project.kicad_pcb \
+            Caps32Project.kicad_plr \
+            Caps32Project.kicad_pro \
+            Caps32Project.kicad_sch \
+            fp-info-cache || echo "Warning: Some files might not exist in branch 340"
+
+          mv Caps32Project.kicad_pcb Caps32Project.kicad_plr \
+             Caps32Project.kicad_pro Caps32Project.kicad_sch \
+             fp-info-cache \
+             main_branch/340/ || echo "Warning: Some files might not exist, skipping move."
+
+      - name: Commit changes to main
+        run: |
+          cd main_branch
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add .
+          git diff --staged --quiet || git commit -m "Sync from 340 to main/340"
 
       - name: Pull latest changes from remote main before pushing
         run: |
