@@ -18,13 +18,13 @@ jobs:
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
-          output_path: ${{ github.workspace }}/images/340
+          output_path: ${{ github.workspace }}/images
           
       - name: Render PCB GIF
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
-          output_path: ${{ github.workspace }}/images/340
+          output_path: ${{ github.workspace }}/images
           animation: gif
 
       - name: Commit and Push Changes
