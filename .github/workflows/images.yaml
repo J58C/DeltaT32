@@ -26,32 +26,6 @@ jobs:
           output_path: ${{ github.workspace }}/images/42
           animation: gif
 
-      - name: Commit and Push to branch 42
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-      
-          # Stash any untracked files before switching branches
-          git stash push --include-untracked
-      
-          # Checkout branch 42
-          git checkout 42
-          
-          # Ensure the latest changes are pulled and rebased from branch 42
-          git pull origin 42 --rebase
-      
-          # Stage the changes (images in this case)
-          git add images/
-      
-          # Commit if there are changes
-          git diff --staged --quiet || git commit -m 'Add rendered PCB images and GIFs'
-      
-          # Push changes to branch 42 (force push)
-          git push origin 42 --force
-      
-          # Apply the stashed changes back
-          git stash pop || echo "No stashed changes to pop"
-
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v3
