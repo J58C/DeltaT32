@@ -1,25 +1,23 @@
-name: Render Branch 42
+name: images
 on:
   push:
     branches:
       - '42'
-    paths:
-      - 'Caps32Project.kicad_pcb'
 jobs:
   render-images:
-    name: Render PCB
+    name: render-images
     runs-on: ubuntu-latest
     steps:
-      - name: Check Out the Repo
+      - name: Check out the repo
         uses: actions/checkout@v4
 
-      - name: Render PCB Images
+      - name: render pcb images
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
           output_path: ${{ github.workspace }}/images
           
-      - name: Render PCB GIF
+      - name: render pcb gif
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
@@ -37,7 +35,6 @@ jobs:
           path: "images"
 
   deploy-pages:
-    name: Deploy Pages
     if: github.ref == 'refs/heads/42'
     runs-on: ubuntu-latest
     needs: render-images
