@@ -1,0 +1,46 @@
+name: images
+on:
+  push:
+    branches:
+      - 'index'
+jobs:
+  render-images:
+    name: PCB Render from Multiple Branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out the Repo (index)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: index
+
+      - name: Fetch All Branches
+        run: git fetch --all
+
+      - name: Render PCB Images from Branches
+        run: |
+          for branch in 42 17048 340; do
+            echo "Checking out branch: $branch"
+            git checkout $branch -- Caps32Project.kicad_pcb
+            
+            echo "Rendering PCB from branch: $branch"
+            mkdir -p images/$branch
+            docker run --rm -v ${{ github.workspace }}:/workspace linalinn/kicad-render \
+              --pcb_file /workspace/Caps32Project.kicad_pcb \
+              --output_path /workspace/images/$branch
+            
+            echo "Rendering GIF for branch: $branch"
+            docker run --rm -v ${{ github.workspace }}:/workspace linalinn/kicad-render \
+              --pcb_file /workspace/Caps32Project.kicad_pcb \
+              --output_path /workspace/images/$branch \
+              --animation gif
+          done
+
+      - name: Commit and Push Rendered Images to index
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add images
+          git commit -m "Update PCB render images from multiple branches"
+          git push origin index
+        continue-on-error: true
