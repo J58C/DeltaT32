@@ -1,4 +1,4 @@
-name: Sync Branches to Main
+name: Sync
 on:
   push:
     branches:
@@ -10,38 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
+      - name: Checkout main branch
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Sync 42
+      - name: Get current branch name
+        run: echo "BRANCH_NAME=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Copy to main/${{ env.BRANCH_NAME }}
         run: |
           git checkout main
           git pull origin main
-          git checkout 42 -- .
-          mkdir -p 42
-          mv * 42/
+          mkdir -p ${{ env.BRANCH_NAME }}
+
+          git checkout ${{ env.BRANCH_NAME }} -- \
+            Caps32Project.kicad_pcb \
+            Caps32Project.kicad_plr \
+            Caps32Project.kicad_pro \
+            Caps32Project.kicad_sch \
+            fp-info-cache
+
+          cp -r Caps32Project.kicad_pcb Caps32Project.kicad_plr \
+                Caps32Project.kicad_pro Caps32Project.kicad_sch \
+                fp-info-cache \
+                ${{ env.BRANCH_NAME }}/
+
           git add .
-          git commit -m "Sync changes"
-        
-      - name: Sync 17048
-        run: |
-          git checkout main
-          git pull origin main
-          git checkout 17048 -- .
-          mkdir -p 17048
-          mv * 17048/
-          git add .
-          git commit -m "Sync changes"
-        
-      - name: Sync 340
-        run: |
-          git checkout main
-          git pull origin main
-          git checkout 340 -- .
-          mkdir -p 340
-          mv * 340/
-          git add .
-          git commit -m "Sync changes"
+          git diff --staged --quiet || git commit -m "Sync from ${{ env.BRANCH_NAME }} to main/${{ env.BRANCH_NAME }}"
         
       - name: Push changes to main
         run: |
