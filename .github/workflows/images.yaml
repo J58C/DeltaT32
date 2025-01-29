@@ -30,7 +30,10 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          
+      
+          # Fix permissions for the problematic files
+          chmod -R u+rw images/42/
+      
           # Stash any untracked files before switching branches
           git stash push --include-untracked
           
