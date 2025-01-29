@@ -5,6 +5,7 @@ on:
       - '42'
       - '17048'
       - '340'
+  workflow_dispatch:
 jobs:
   sync:
     runs-on: ubuntu-latest
