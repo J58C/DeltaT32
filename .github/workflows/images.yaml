@@ -30,11 +30,11 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          git stash  # Simpan perubahan sebelum checkout
           git checkout main
-          mkdir -p images
-          cp -r ${{ github.workspace }}/images/* images/
+          git stash pop  # Ambil kembali perubahan setelah checkout
           git add images/
-          git commit -m 'Add rendered PCB images and GIFs'
+          git commit -m 'Add rendered PCB images and GIFs' || echo "No changes to commit"
           git push origin main
 
       - name: Setup Pages
