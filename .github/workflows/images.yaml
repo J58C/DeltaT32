@@ -17,23 +17,20 @@ jobs:
       - name: Fetch All Branches
         run: git fetch --all
 
-      - name: Render PCB Images from Branches
+      - name: Render PCB Images from Multiple Branches
         run: |
           for branch in 42 17048 340; do
-            echo "Checking out branch: $branch"
+            echo "Checking out file from branch: $branch"
             git checkout origin/$branch -- Caps32Project.kicad_pcb || { echo "Branch $branch not found!"; continue; }
             
             echo "Rendering PCB from branch: $branch"
             mkdir -p images/$branch
-            docker run --rm -v ${{ github.workspace }}:/workspace linalinn/kicad-render \
-              --pcb_file /workspace/Caps32Project.kicad_pcb \
-              --output_path /workspace/images/$branch
             
-            echo "Rendering GIF for branch: $branch"
-            docker run --rm -v ${{ github.workspace }}:/workspace linalinn/kicad-render \
-              --pcb_file /workspace/Caps32Project.kicad_pcb \
-              --output_path /workspace/images/$branch \
-              --animation gif
+            echo "Running KiCad Render for $branch"
+            gh workflow run linalinn/kicad-render@main -f pcb_file=Caps32Project.kicad_pcb -f output_path=images/$branch
+            
+            echo "Running KiCad Render GIF for $branch"
+            gh workflow run linalinn/kicad-render@main -f pcb_file=Caps32Project.kicad_pcb -f output_path=images/$branch -f animation=gif
           done
 
       - name: Commit and Push Rendered Images to index
@@ -41,6 +38,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add images
-          git commit -m "Update PCB" || echo "No changes to commit"
+          git commit -m "Update PCB render images from multiple branches" || echo "No changes to commit"
           git push origin index
         continue-on-error: true
