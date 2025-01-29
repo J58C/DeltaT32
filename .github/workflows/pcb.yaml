@@ -17,13 +17,13 @@ jobs:
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
-          output_path: ${{ github.workspace }}/images/42
+          output_path: ${{ github.workspace }}/images
           
       - name: Render PCB GIF
         uses: linalinn/kicad-render@main
         with:
           pcb_file: Caps32Project.kicad_pcb
-          output_path: ${{ github.workspace }}/images/42
+          output_path: ${{ github.workspace }}/images
           animation: gif
           
       - name: Setup Pages
@@ -34,7 +34,7 @@ jobs:
         if: github.ref == 'refs/heads/42'
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "images/42"
+          path: "images"
 
   deploy-pages:
     name: Deploy Pages
