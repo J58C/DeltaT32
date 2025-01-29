@@ -2,42 +2,46 @@ name: images
 on:
   push:
     branches:
-      - 'index'
+      - '42'
+      - '17048'
+      - '340'
+    paths:
+      - 'Caps32Project.kicad_pcb'
+
 jobs:
   render-images:
-    name: PCB Render from Multiple Branches
+    name: PCB Render for ${{ matrix.branch }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        branch: [42, 17048, 340]
+
     steps:
-      - name: Check Out the Repo (index)
+      - name: Check Out the Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: index
+          ref: ${{ matrix.branch }}
 
-      - name: Fetch All Branches
-        run: git fetch --all
+      - name: Render PCB Images
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images/${{ matrix.branch }}
+          
+      - name: Render PCB GIF
+        uses: linalinn/kicad-render@main
+        with:
+          pcb_file: Caps32Project.kicad_pcb
+          output_path: ${{ github.workspace }}/images/${{ matrix.branch }}
+          animation: gif
 
-      - name: Render PCB Images from Multiple Branches
-        run: |
-          for branch in 42 17048 340; do
-            echo "Checking out file from branch: $branch"
-            git checkout origin/$branch -- Caps32Project.kicad_pcb || { echo "Branch $branch not found!"; continue; }
-            
-            echo "Rendering PCB from branch: $branch"
-            mkdir -p images/$branch
-            
-            echo "Running KiCad Render for $branch"
-            gh workflow run linalinn/kicad-render@main -f pcb_file=Caps32Project.kicad_pcb -f output_path=images/$branch
-            
-            echo "Running KiCad Render GIF for $branch"
-            gh workflow run linalinn/kicad-render@main -f pcb_file=Caps32Project.kicad_pcb -f output_path=images/$branch -f animation=gif
-          done
-
-      - name: Commit and Push Rendered Images to index
+      - name: Commit and Push Changes to index
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add images
-          git commit -m "Update PCB render images from multiple branches" || echo "No changes to commit"
+          git checkout index
+          git add images/${{ matrix.branch }}
+          git commit -m "Update PCB render images for branch ${{ matrix.branch }}"
           git push origin index
         continue-on-error: true
