@@ -31,17 +31,20 @@ jobs:
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
       
-          # Fix permissions for the problematic files
-          chmod -R u+rw images/42/
+          # Clean untracked files (dangerous, make sure you don't need them)
+          git clean -fd
       
-          # Stash any untracked files before switching branches
+          # Stash any untracked files before switching branches (optional, if you don't want to clean)
           git stash push --include-untracked
           
           git checkout main
-          git pull origin main --rebase  # Ensure the latest main branch is pulled and rebased
+          git pull origin main --rebase
           git add images/
           git diff --staged --quiet || git commit -m 'Add rendered PCB images and GIFs'
           git push origin main --force
+          
+          # Apply the stashed changes back (if needed)
+          git stash pop
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
