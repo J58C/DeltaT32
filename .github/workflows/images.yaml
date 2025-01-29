@@ -21,7 +21,7 @@ jobs:
         run: |
           for branch in 42 17048 340; do
             echo "Checking out branch: $branch"
-            git checkout $branch -- Caps32Project.kicad_pcb
+            git checkout origin/$branch -- Caps32Project.kicad_pcb || { echo "Branch $branch not found!"; continue; }
             
             echo "Rendering PCB from branch: $branch"
             mkdir -p images/$branch
@@ -41,6 +41,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add images
-          git commit -m "Update PCB render images from multiple branches"
+          git commit -m "Update PCB" || echo "No changes to commit"
           git push origin index
         continue-on-error: true
