@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Mengambil seluruh riwayat repo untuk checkout branch
 
       - name: render pcb images
         uses: linalinn/kicad-render@main
@@ -23,7 +25,18 @@ jobs:
           pcb_file: Caps32Project.kicad_pcb
           output_path: ${{ github.workspace }}/images
           animation: gif
-          
+
+      - name: Commit and Push to main
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git checkout main
+          mkdir -p images
+          cp -r ${{ github.workspace }}/images/* images/
+          git add images/
+          git commit -m 'Add rendered PCB images and GIFs'
+          git push origin main
+
       - name: Setup Pages
         if: github.ref == 'refs/heads/42'
         uses: actions/configure-pages@v3
