@@ -26,13 +26,15 @@ jobs:
           output_path: ${{ github.workspace }}/images
           animation: gif
 
-      - name: Commit and Push to 42
+      - name: Commit and Push to main
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          git checkout main
+          git pull origin main  # Pastikan branch main terbaru sebelum commit
           git add images/
           git diff --staged --quiet || git commit -m 'Add rendered PCB images and GIFs'
-          git push origin 42
+          git push origin main
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/42'
