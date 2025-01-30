@@ -2,7 +2,7 @@
 ---
 
 ### Branch `42`
-![Animation (42)](https://github.com/J58C/Caps32Project/raw/42/images/rotating.gif)
+![Animation (42)](https://github.com/J58C/Caps32Project/raw/images/42/rotating.gif)
 ---
 
 ### Branch `17048`
