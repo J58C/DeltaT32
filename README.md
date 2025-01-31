@@ -10,7 +10,7 @@
 ---
 
 ### Branch `340`
-![Animation (340)](https://github.com/J58C/Caps32Project/raw/340/images/rotating.gif)
+![Animation (340)](https://github.com/J58C/Caps32Project/raw/main/Images/340/rotating.gif)
 ---
 
 ### Branch `702`
