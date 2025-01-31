@@ -6,7 +6,7 @@
 ---
 
 ### Branch `17048`
-![Animation (17048)](https://github.com/J58C/Caps32Project/raw/17048/images/rotating.gif)
+![Animation (17048)](https://github.com/J58C/Caps32Project/raw/main/Images/17048/rotating.gif)
 ---
 
 ### Branch `340`
