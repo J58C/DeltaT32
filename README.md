@@ -14,5 +14,5 @@
 ---
 
 ### Branch `702`
-![Animation (340)](https://github.com/J58C/Caps32Project/raw/702/images/rotating.gif)
+![Animation (340)](https://github.com/J58C/Caps32Project/raw/main/Images/702/rotating.gif)
 ---
