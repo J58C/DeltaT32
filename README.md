@@ -2,9 +2,9 @@
 
 ### Branch `4057`
 <p align="center">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png" height="175">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png" height="175">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/rotating.gif" height="175">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png" height="180">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png" height="180">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/rotating.gif" height="180">
 </p>
 
 ---
