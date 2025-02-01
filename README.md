@@ -1,23 +1,38 @@
 ---
 
 ### Branch `4057`
-![Top (4057)](https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png =250x)
-![Bottom (4057)](https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png =250x)
-![Animation (4057)](https://github.com/J58C/Caps32Project/raw/main/Images/4057/rotating.gif)
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png" width="250">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png" width="250">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/rotating.gif" width="250">
+</p>
+
 ---
 
 ### Branch `42`
-![Animation (42)](https://github.com/J58C/Caps32Project/raw/main/Images/42/rotating.gif)
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/42/rotating.gif" width="250">
+</p>
+
 ---
 
 ### Branch `17048`
-![Animation (17048)](https://github.com/J58C/Caps32Project/raw/main/Images/17048/rotating.gif)
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/17048/rotating.gif" width="250">
+</p>
+
 ---
 
 ### Branch `340`
-![Animation (340)](https://github.com/J58C/Caps32Project/raw/main/Images/340/rotating.gif)
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/340/rotating.gif" width="250">
+</p>
+
 ---
 
 ### Branch `702`
-![Animation (340)](https://github.com/J58C/Caps32Project/raw/main/Images/702/rotating.gif)
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/702/rotating.gif" width="250">
+</p>
+
 ---
