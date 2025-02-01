@@ -2,8 +2,8 @@
 
 ### Branch `4057`
 <p align="center">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png" height="220">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png" height="220">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/top.png" height="210">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/bottom.png" height="210">
   <img src="https://github.com/J58C/Caps32Project/raw/main/Images/4057/rotating.gif">
 </p>
 
