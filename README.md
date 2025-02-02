@@ -18,12 +18,7 @@
 
 ---
 
-### Branch `340`
-<p align="center">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/340/top.png" height="178">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/340/bottom.png" height="178">
-  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/340/rotating.gif" width="178">
-</p>
+
 
 ---
 
