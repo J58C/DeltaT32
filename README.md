@@ -9,6 +9,15 @@
 
 ---
 
+### Branch `9250`
+<p align="center">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/9250/top.png" height="178">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/9250/bottom.png" height="178">
+  <img src="https://github.com/J58C/Caps32Project/raw/main/Images/9250/rotating.gif" height="178">
+</p>
+
+---
+
 ### Branch `42`
 <p align="center">
   <img src="https://github.com/J58C/Caps32Project/raw/main/Images/42/top.png" height="178">
