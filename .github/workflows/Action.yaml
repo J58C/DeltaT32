@@ -7,7 +7,7 @@ on:
     paths:
       - 'DeltaT32.kicad_pcb'
 
-  workflow_dispatch:  # <--- Manual trigger button
+  workflow_dispatch:
 
 jobs:
   render-images:
@@ -19,8 +19,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Render PCB Images (PNG)
+      - name: Render PCB Images
         uses: linalinn/kicad-render@main
         with:
           pcb_file: DeltaT32.kicad_pcb
@@ -33,19 +34,23 @@ jobs:
           output_path: images
           animation: gif
 
-      - name: Remove Old Rendered Images
+      - name: Remove Old Images
         run: |
-          rm -rf Images/*
+          rm -rf Images/* || true
+
+      - name: Move New Images
+        run: |
           mkdir -p Images
+          mv images/* Images/
 
-      - name: Move New Images to Images/
+      - name: Update README with Rendered Images
         run: |
-          cp -r images/* Images/
+          echo -e "## PCB Preview\n\n![Top View](Images/top.png)\n![Bottom View](Images/bottom.png)\n![3D GIF](Images/rotating.gif)" > README.md
 
-      - name: Commit and Push Changes
+      - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Images/
-          git commit -m "Update PCB render images for main" || echo "No changes to commit"
+          git add Images/ README.md
+          git commit -m "Update PCB images and README preview" || echo "No changes to commit"
           git push origin main
