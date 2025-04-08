@@ -2,7 +2,7 @@ name: Images Render
 on:
   push:
     branches:
-      - '42'
+      - 'main'
     paths:
       - 'Caps32Project.kicad_pcb'
 jobs:
@@ -10,11 +10,11 @@ jobs:
     name: PCB Render
     runs-on: ubuntu-latest
     steps:
-      - name: Check Out the Repo (Branch 42)
+      - name: Check Out the Repo (Branch main)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: 42
+          ref: main
 
       - name: Render PCB Images
         uses: linalinn/kicad-render@main
@@ -39,19 +39,19 @@ jobs:
           git checkout main
           git pull origin main
           
-      - name: Remove Old Rendered Images in "Images/42"
+      - name: Remove Old Rendered Images in "Images/main"
         run: |
-          rm -rf Images/42/* || true
+          rm -rf Images/main/* || true
 
-      - name: Move New Images to "Images/42"
+      - name: Move New Images to "Images/main"
         run: |
-          mkdir -p Images/42
-          mv images/* Images/42/
+          mkdir -p Images/main
+          mv images/* Images/main/
 
       - name: Commit and Push Changes to Main Branch
         run: |
-          git add Images/42/
+          git add Images/main/
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update PCB render images for 42"
+          git commit -m "Update PCB render images for main"
           git push origin main  
