@@ -7,6 +7,8 @@ on:
     paths:
       - 'DeltaT32.kicad_pcb'
 
+  workflow_dispatch:
+
 jobs:
   render-images:
     name: PCB Render
