@@ -60,14 +60,6 @@
       ],
       "drc_exclusions": [
         [
-          "copper_edge_clearance|194480000|91400000|2d67da8d-2ef5-4dfc-ba95-a1edfd5f63ed|31922146-9946-4874-9a0f-3bdd1228971e",
-          ""
-        ],
-        [
-          "copper_edge_clearance|194480000|98700000|2d67da8d-2ef5-4dfc-ba95-a1edfd5f63ed|f8287cbd-2658-4319-ba49-86bdf3e56628",
-          ""
-        ],
-        [
           "hole_clearance|217315000|100876250|6aee618c-cadb-4e5c-bb2b-539bb3d76be8|1709c7d2-8d33-4bba-a933-6ad40fdadf6d",
           ""
         ],
@@ -81,14 +73,6 @@
         ],
         [
           "hole_clearance|217315000|106976250|b3d8b564-49b8-44b8-9db0-6ae8bd964d3c|b6ffe25e-f2bd-4ec7-ac3c-7b05f59826fb",
-          ""
-        ],
-        [
-          "silk_edge_clearance|194170000|93150000|2d67da8d-2ef5-4dfc-ba95-a1edfd5f63ed|eb39ef2f-0d3a-4d80-a9ec-49a164f2d2f6",
-          ""
-        ],
-        [
-          "silk_edge_clearance|194170000|94450000|2d67da8d-2ef5-4dfc-ba95-a1edfd5f63ed|80716b11-24dc-41b0-b14b-36e2b2302caa",
           ""
         ]
       ],
@@ -663,20 +647,12 @@
       "Root"
     ],
     [
-      "93d643cd-45b7-4efa-af22-82a1d01fbc3f",
-      "ICM20948"
-    ],
-    [
       "e8eb2bc8-2912-476a-a405-2ddfc7cbcf31",
       "BMI"
     ],
     [
       "ed972637-5821-4288-9844-4283d236632b",
       "MPU9250"
-    ],
-    [
-      "c569ba63-22df-415a-b39f-1c702667bd40",
-      "MPU6050"
     ]
   ],
   "text_variables": {}
