@@ -1117,23 +1117,25 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at -11.43 19.05 0)
+			(property "Reference" "U2"
+				(at 2.1941 -20.32 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "MPU-9250"
-				(at 7.62 -19.05 0)
+				(at 2.1941 -22.86 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
-			(property "Footprint" "Sensor_Motion:InvenSense_QFN-24_3x3mm_P0.4mm"
+			(property "Footprint" "Sensor_Motion:InvenSense_QFN-24_3x3mm_P0.4mm_NoMask"
 				(at 0 -25.4 0)
 				(effects
 					(font
@@ -1282,6 +1284,78 @@
 						)
 					)
 				)
+				(pin no_connect line
+					(at -12.7 -12.7 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 12.7 15.24 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 12.7 12.7 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 12.7 10.16 180)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin power_in line
 					(at 0 -22.86 90)
 					(length 5.08)
@@ -1293,6 +1367,42 @@
 						)
 					)
 					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 12.7 -13.97 180)
+					(length 2.54) hide
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -12.7 15.24 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1383,6 +1493,78 @@
 						)
 					)
 					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -12.7 12.7 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -12.7 10.16 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -12.7 -7.62 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -12.7 -10.16 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2085,12 +2267,6 @@
 		(uuid "08559c78-2012-428a-af2f-bb7120ddfac7")
 	)
 	(junction
-		(at 49.53 30.48)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1cfc1b72-19ee-4402-9f6c-d15f31cbd0d7")
-	)
-	(junction
 		(at 67.31 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2107,6 +2283,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5f112608-aec5-4025-bc8b-a43d86f29138")
+	)
+	(junction
+		(at 49.53 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6f2bbd36-711d-47a5-b940-77562028a1e3")
 	)
 	(junction
 		(at 26.67 76.2)
@@ -4849,72 +5031,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 49.53 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "03558b36-053f-4bad-bb02-5402e442efb7")
-		(property "Reference" "#PWR09"
-			(at 49.53 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 49.53 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 49.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 49.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3V3\""
-			(at 49.53 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "05158ca5-5214-43b2-bd75-bc8fc4dda0fc")
-		)
-		(instances
-			(project "sensor-mpu"
-				(path "/31073d40-5b6d-4842-a1db-ec3bf1713456"
-					(reference "#PWR09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Sensor:MAX30102")
 		(at 158.75 41.91 270)
 		(unit 1)
@@ -5928,7 +6044,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Sensor_Motion:InvenSense_QFN-24_3x3mm_P0.4mm"
+		(property "Footprint" "Sensor_Motion:InvenSense_QFN-24_3x3mm_P0.4mm_NoMask"
 			(at 48.26 124.46 0)
 			(effects
 				(font
@@ -5996,6 +6112,36 @@
 		)
 		(pin "8"
 			(uuid "9eb96a2b-09e9-4587-97f4-a6c9dc41bf16")
+		)
+		(pin "14"
+			(uuid "847ef14f-2a82-44ce-87d1-627194286171")
+		)
+		(pin "5"
+			(uuid "7eadfda3-d808-45c4-9796-55906eedfad8")
+		)
+		(pin "6"
+			(uuid "701331a5-d799-421d-877d-dbb9ce0b0a0a")
+		)
+		(pin "17"
+			(uuid "f77ab958-b8b3-442d-a2c4-7f97f1577597")
+		)
+		(pin "16"
+			(uuid "88a83f74-428a-4830-ae5a-dc2aec4c9d03")
+		)
+		(pin "15"
+			(uuid "89e366b9-f9ad-4bc6-93c7-a46b27b2896e")
+		)
+		(pin "2"
+			(uuid "59210fe6-0add-4830-9cf7-6e563b0154dc")
+		)
+		(pin "4"
+			(uuid "651f3b3e-c6fb-470a-9523-848847e21e6d")
+		)
+		(pin "3"
+			(uuid "4a694c24-591e-4b44-840f-71257402a5b5")
+		)
+		(pin "19"
+			(uuid "10bc73fd-9708-45f1-b0ce-9c17fc1ed1b7")
 		)
 		(instances
 			(project ""
@@ -6675,6 +6821,72 @@
 			(project "sensor-mpu"
 				(path "/31073d40-5b6d-4842-a1db-ec3bf1713456"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+1V8")
+		(at 49.53 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "53305ea3-1619-4dc0-b484-039f037a0ec8")
+		(property "Reference" "#PWR09"
+			(at 49.53 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+1V8"
+			(at 49.53 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+1V8\""
+			(at 49.53 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c00a627d-a5e7-4b5a-b4cd-f5074cec79c3")
+		)
+		(instances
+			(project "sensor-mpu"
+				(path "/31073d40-5b6d-4842-a1db-ec3bf1713456"
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)

@@ -10152,7 +10152,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_PH_S2B-PH-K_1x02_P2.00mm_Horizontal"
+		(property "Footprint" "DeltaT32:JST_PH2.0"
 			(at 96.52 120.65 0)
 			(effects
 				(font
@@ -12377,7 +12377,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPDT_PCM12"
+		(property "Footprint" "DeltaT32:MSK-12C02-07"
 			(at 257.81 39.37 0)
 			(effects
 				(font

@@ -63,8 +63,7 @@
         "hole_clearance|134880000|92590000|a21868e2-4eb0-4540-b9a3-4869be8f5127|f1d92e13-199b-4a27-86e8-b2683898bae4",
         "hole_clearance|134880000|98690000|1c9e8f79-fa3f-4dbb-b0e1-84873d6d50b5|f1458538-474b-440b-b30d-e44ad88eb43e",
         "hole_clearance|134880000|98690000|1c9e8f79-fa3f-4dbb-b0e1-84873d6d50b5|f7594e3a-590b-4fcf-8154-5983505d486c",
-        "lib_footprint_mismatch|112705000|78320000|200dbeb7-0c96-4a0e-aee6-d454f889a9be|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|122320000|104720000|f1882416-1aa6-4cbe-9a2a-5c6bb3237d14|00000000-0000-0000-0000-000000000000"
+        "lib_footprint_mismatch|126230000|76290000|f129dcbb-0047-41db-8762-4425862f518e|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "version": 2
@@ -107,7 +106,7 @@
         "silk_over_copper": "warning",
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
-        "solder_mask_bridge": "error",
+        "solder_mask_bridge": "ignore",
         "starved_thermal": "error",
         "text_height": "warning",
         "text_thickness": "warning",
@@ -494,9 +493,9 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
-      "svg": "",
-      "vrml": ""
+      "step": "esp-unit-c3-v2.step",
+      "svg": "../../../../../../../Downloads/",
+      "vrml": "../esp-unit-c3-v2.wrl"
     },
     "page_layout_descr_file": ""
   },
