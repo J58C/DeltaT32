@@ -541,7 +541,7 @@
       "specctra_dsn": "",
       "step": "",
       "svg": "",
-      "vrml": "../sensor-bmi.wrl"
+      "vrml": "../3dAsset/sensor-bmi1.wrl"
     },
     "page_layout_descr_file": ""
   },
