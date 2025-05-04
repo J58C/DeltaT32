@@ -12478,7 +12478,7 @@
 				)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "Delta Board 2"
 			(at 44.45 154.94 0)
 			(effects
 				(font
