@@ -495,7 +495,7 @@
       "specctra_dsn": "",
       "step": "esp-unit-c3-v2.step",
       "svg": "../../../../../../../Downloads/",
-      "vrml": "../3dAsset/esp-unit-c3-v2.wrl"
+      "vrml": "../esp-unit-c3-v2.wrl"
     },
     "page_layout_descr_file": ""
   },
