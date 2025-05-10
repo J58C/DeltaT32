@@ -1,57 +1,56 @@
 # DeltaT32 – Modular ESP32-C3 Wearable Hardware (KiCad 8)
 
-**DeltaT32** adalah proyek desain perangkat keras modular berbasis **ESP32-C3 Mini-1**, dirancang untuk sistem wearable namun fleksibel untuk aplikasi embedded lainnya. Desain ini dibuat dengan menggunakan **KiCad 8**, terdiri dari unit utama ESP dan dua modul sensor terpisah (BMI160/270 & MPU9250).
+**DeltaT32** is a modular hardware design project based on the **ESP32-C3 Mini-1**, intended primarily for wearable systems but flexible enough for general-purpose embedded applications. The design was created using **KiCad 8**, and includes a main ESP unit and two detachable sensor boards (BMI160/270 and MPU9250).
 
-Walau firmware belum dikembangkan, desain ini disusun agar **kompatibel dengan ekosistem [esp-rs (ESP32-Rust)](https://github.com/esp-rs)**, memungkinkan eksplorasi sistem embedded menggunakan bahasa Rust di masa mendatang.
+Although firmware is not yet provided, the hardware is designed to be **compatible with the [esp-rs (ESP32 Rust)](https://github.com/esp-rs)** ecosystem, making it suitable for future development using the Rust programming language.
 
 ---
 
-## Struktur Direktori
+## Project Structure
 
 ```
 
 DeltaT32/
-├── Schematic/                         # Skematik dalam format PDF
+├── Schematic/ # PDF-format schematics
 ├── Hardwares/
-│   ├── esp-unit-c3-v3/               # Desain KiCad untuk board utama ESP32-C3
-│   ├── sensor-bmi-v2/                # Desain KiCad untuk modul sensor BMI160
-│   └── sensor-mpu-v2/                # Desain KiCad untuk modul sensor MPU6050
-├── 3DModels/                          # Model 3D komponen (jika ada)
-├── Archives/                          # Backup versi sebelumnya (.zip)
-├── Materials/                         # File BOM (Bill of Materials) untuk setiap board
-└── README.md                          # Dokumentasi proyek ini
+│ ├── esp-unit-c3-v3/ # KiCad project for the main ESP32-C3 board
+│ ├── sensor-bmi-v2/ # KiCad project for the BMI160 sensor board
+│ └── sensor-mpu-v2/ # KiCad project for the MPU6050 sensor board
+├── 3DModels/ # 3D models of components (if available)
+├── Archives/ # Archived ZIP files of older versions
+├── Materials/ # Bill of Materials (BOM) for each board
+└── README.md # Project documentation
 
 ````
 
 ---
 
-## Spesifikasi Teknis
+## Technical Specifications
 
-| Komponen       | Detail                                     |
-|----------------|--------------------------------------------|
-| MCU            | ESP32-C3 Mini-1                            |
-| Sensor         | BMI160/270, MPU9250 (dengan board terpisah)|
-| Desain         | Modular (mainboard + sensor detachable)    |
-| CAD Software   | KiCad 8                                    |
-| Kompatibilitas | esp-rs / ESP32-Rust (belum diuji)          |
-| Output         | Skematik (PDF), BOM, 3D Model              |
-
----
-
-## Kompatibilitas Firmware
-
-Desain ini dirancang untuk mendukung penggunaan dengan **toolchain esp-rs**, namun **belum terdapat firmware atau pengujian langsung** menggunakan Rust.
-
-> Link referensi: [https://github.com/esp-rs](https://github.com/esp-rs)
+| Component      | Description                                  |
+|----------------|----------------------------------------------|
+| MCU            | ESP32-C3 Mini-1                              |
+| Sensors        | BMI160/270, MPU9250 (modular and detachable) |
+| Design Style   | Modular: separate mainboard and sensor units |
+| CAD Tool       | KiCad 8                                      |
+| Firmware       | Not included (hardware only)                 |
+| Rust Support   | Designed with esp-rs compatibility in mind   |
+| Outputs        | Gerbers, Schematics, BOMs, 3D Visuals        |
 
 ---
 
-## Lisensi
+## Firmware Compatibility
 
-Proyek ini dirilis di bawah lisensi **MIT License** — kamu bebas menggunakannya, memodifikasi, dan mendistribusikannya selama mencantumkan atribusi yang sesuai.
+This hardware is designed to be compatible with the **[esp-rs (Rust for ESP32)](https://github.com/esp-rs)** ecosystem, but **no actual firmware has been implemented or tested** using Rust at this time. Custom firmware development in C, C++, or Rust.
 
 ---
 
-## Kontributor
+## License
 
-* [@J58C](https://github.com/J58C) – Perancang dan pengelola proyek DeltaT32
+This project is released under the **MIT License** — feel free to use, modify, and distribute it with proper attribution.
+
+---
+
+## Author
+
+* [@J58C](https://github.com/J58C) — Creator and maintainer of the DeltaT32 hardware project
