@@ -10,7 +10,6 @@ This design has been created specifically to fulfill the requirements of a **Cap
 ## Project Structure
 
 ```
-
 DeltaT32/
 ├── Schematic/ # PDF-format schematics
 ├── Hardwares/
@@ -21,7 +20,6 @@ DeltaT32/
 ├── Archives/ # Archived ZIP files of older versions
 ├── Materials/ # Bill of Materials (BOM) for each board
 └── README.md # Project documentation
-
 ````
 
 
