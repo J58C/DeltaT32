@@ -4,7 +4,7 @@
 
 **DeltaT32** is a modular hardware design project based on the **ESP32-C3 Mini-1**, intended primarily for wearable systems, but versatile enough for general-purpose embedded applications. Created using **KiCad 8**, this project includes a main ESP unit and two detachable sensor boards (BMI160/270 and MPU9250), making it ideal for both academic and practical applications.
 
-This design has been created specifically to fulfill the requirements of a **Capstone Project**, integrating modern hardware design practices with real-world applications. Although firmware development is still pending, the hardware is designed to be compatible with the **[esp-rs (ESP32 Rust)](https://github.com/esp-rs)** ecosystem, providing a foundation for future development in Rust or other embedded programming languages.
+This design has been created specifically to fulfill the requirements of a **Capstone Project**, integrating modern hardware design practices with real-world applications. Although firmware development is still pending, the hardware is designed to be compatible with the **[esp-rs (ESP32 Rust)](https://github.com/esp-rs)** ecosystem.
 
 
 ## Project Structure
