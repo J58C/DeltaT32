@@ -35,7 +35,7 @@ DeltaT32/
 | CAD Tool       | KiCad 8                                      |
 | Firmware       | Not included (hardware only)                 |
 | Rust Support   | Designed with esp-rs compatibility in mind   |
-| Outputs        | Gerbers, Schematics, BOMs, 3D Visuals        |
+| Outputs        | Schematics, BOMs, 3D Visuals        |
 
 
 ## Firmware Compatibility
