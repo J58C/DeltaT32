@@ -1,5 +1,7 @@
 # DeltaT32 – Modular ESP32-C3 Wearable Hardware (KiCad 8)
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 **DeltaT32** is a modular hardware design project based on the **ESP32-C3 Mini-1**, intended primarily for wearable systems but flexible enough for general-purpose embedded applications. The design was created using **KiCad 8**, and includes a main ESP unit and two detachable sensor boards (BMI160/270 and MPU9250).
 
 Although firmware is not yet provided, the hardware is designed to be **compatible with the [esp-rs (ESP32 Rust)](https://github.com/esp-rs)** ecosystem, making it suitable for future development using the Rust programming language.
