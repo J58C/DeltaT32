@@ -24,7 +24,6 @@ DeltaT32/
 
 ````
 
----
 
 ## Technical Specifications
 
@@ -38,20 +37,7 @@ DeltaT32/
 | Rust Support   | Designed with esp-rs compatibility in mind   |
 | Outputs        | Gerbers, Schematics, BOMs, 3D Visuals        |
 
----
 
 ## Firmware Compatibility
 
 This hardware is designed to be compatible with the **[esp-rs (Rust for ESP32)](https://github.com/esp-rs)** ecosystem, but **no actual firmware has been implemented or tested** using Rust at this time. Custom firmware development in C, C++, or Rust.
-
----
-
-## License
-
-This project is released under the **MIT License** — feel free to use, modify, and distribute it with proper attribution.
-
----
-
-## Author
-
-* [@J58C](https://github.com/J58C) — Creator and maintainer of the DeltaT32 hardware project
