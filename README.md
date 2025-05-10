@@ -6,7 +6,6 @@
 
 Although firmware is not yet provided, the hardware is designed to be **compatible with the [esp-rs (ESP32 Rust)](https://github.com/esp-rs)** ecosystem, making it suitable for future development using the Rust programming language.
 
----
 
 ## Project Structure
 
