@@ -1,4 +1,4 @@
-# DeltaT32 – ESP32-C3 Wearable for Capstone Project (KiCad 8)
+# DeltaT32 – ESP32-C3 Wearable for Capstone
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
