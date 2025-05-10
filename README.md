@@ -6,7 +6,7 @@ Walau firmware belum dikembangkan, desain ini disusun agar **kompatibel dengan e
 
 ---
 
-## 📁 Struktur Direktori
+## Struktur Direktori
 
 ```
 
@@ -35,27 +35,6 @@ DeltaT32/
 | CAD Software   | KiCad 8                                    |
 | Kompatibilitas | esp-rs / ESP32-Rust (belum diuji)          |
 | Output         | Skematik (PDF), BOM, 3D Model              |
-
----
-
-## Cara Menggunakan
-
-1. Clone repositori:
-   ```bash
-   git clone https://github.com/J58C/DeltaT32.git
-````
-
-2. Buka file `.kicad_pro` dari folder yang kamu butuhkan, misalnya:
-
-   ```
-   Hardwares/esp-unit-c3-v3/esp-unit-c3-v3.kicad_pro
-   ```
-
-3. Lakukan modifikasi, pengecekan desain, atau ekspor produksi seperti:
-
-   * Gerber file untuk pabrik PCB
-   * BOM (Bill of Materials)
-   * 3D visualization
 
 ---
 
