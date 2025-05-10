@@ -46,16 +46,6 @@ Desain ini dirancang untuk mendukung penggunaan dengan **toolchain esp-rs**, nam
 
 ---
 
-## Output
-
-* ✅ Skematik PDF (`/Schematic`)
-* ✅ BOM (Bill of Materials) (`/Materials`)
-* ✅ File desain KiCad lengkap (`/Hardwares`)
-* ✅ Arsip versi sebelumnya (`/Archives`)
-* ✅ Model 3D (jika tersedia) (`/3DModels`)
-
----
-
 ## Lisensi
 
 Proyek ini dirilis di bawah lisensi **MIT License** — kamu bebas menggunakannya, memodifikasi, dan mendistribusikannya selama mencantumkan atribusi yang sesuai.
