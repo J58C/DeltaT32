@@ -15,8 +15,8 @@ DeltaT32/
 ├── Schematic/ # PDF-format schematics
 ├── Hardwares/
 │ ├── esp-unit-c3-v3/ # KiCad project for the main ESP32-C3 board
-│ ├── sensor-bmi-v2/ # KiCad project for the BMI160 sensor board
-│ └── sensor-mpu-v2/ # KiCad project for the MPU6050 sensor board
+│ ├── sensor-bmi-v2/ # KiCad project for the BMI160/270 sensor board
+│ └── sensor-mpu-v2/ # KiCad project for the MPU9250 sensor board
 ├── 3DModels/ # 3D models of components (if available)
 ├── Archives/ # Archived ZIP files of older versions
 ├── Materials/ # Bill of Materials (BOM) for each board
